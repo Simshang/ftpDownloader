@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="ftplib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/ftplib/jakarta-oro-2.0.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ftplib/commons-net-1.4.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ftplib/log4j-1.2.17.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
