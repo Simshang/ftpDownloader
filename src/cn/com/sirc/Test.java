@@ -1,8 +1,12 @@
 package cn.com.sirc;
 
 
+import java.io.File;
 import java.util.Timer;
 import java.util.TimerTask;
+
+import java.util.Date;
+import java.text.SimpleDateFormat;
 
 import cn.com.ftphelp.Ftp;
 import cn.com.ftphelp.FtpUtil;
@@ -31,7 +35,16 @@ public class Test {
                 }
                 System.out.println("### FTPserver has connected !");
                 try {
-                    FtpUtil.startDown(f, f.getDownloadpath(), f.getServerpath(),f.getBackuppath());//下载ftp文件测试
+                    /*creat backupDir by date*/
+                    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                    String backupPath = f.getBackuppath() + dateFormat.format(new Date());
+                    File fp = new File(backupPath);
+                    // 创建目录
+                    if (!fp.exists()) {
+                        fp.mkdirs();// 目录不存在的情况下，创建目录。
+                    }
+
+                    FtpUtil.startDown(f, f.getDownloadpath(), f.getServerpath(),backupPath+'/');//下载ftp文件测试
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
