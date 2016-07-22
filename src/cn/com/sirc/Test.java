@@ -35,7 +35,7 @@ public class Test {
                 }
                 System.out.println("### FTPserver has connected !");
                 try {
-                    /*creat backupDir by date*/
+                    /*creat backupDir by date
                     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
                     String backupPath = f.getBackuppath() + dateFormat.format(new Date());
                     File fp = new File(backupPath);
@@ -45,6 +45,8 @@ public class Test {
                     }
 
                     FtpUtil.startDown(f, f.getDownloadpath(), f.getServerpath(),backupPath+'/');//下载ftp文件测试
+                    */
+                    FtpUtil.startDown(f, f.getDownloadpath(), f.getServerpath(),f.getBackuppath());
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

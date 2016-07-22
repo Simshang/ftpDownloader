@@ -5,6 +5,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.nio.channels.FileChannel;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 
 import org.apache.commons.net.ftp.FTPClient;
@@ -166,6 +168,10 @@ public class FtpUtil {
 
 							copyFileUsingFileChannels(locaFile,backupFile);
                             System.out.println(realfilename+" is backuped");
+                            // output time
+                            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
+                            String CurrentTime = df.format(new Date());
+                            System.out.println(CurrentTime);// new Date()为获取当前系统时间
 							//删除服务器的数据
 //							ftp.deleteFile(realfilename);
 //							ftp.deleteFile(ftpFile.getName());
