@@ -167,6 +167,10 @@ public class FtpUtil {
                             System.out.println(realfilename+" is downloaded");
 
 							copyFileUsingFileChannels(locaFile,backupFile);
+                            String okfilename = backupFile + ".ok";
+                            File okfile = new File(okfilename);
+                            okfile.createNewFile();
+
                             System.out.println(realfilename+" is backuped");
                             // output time
                             SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式

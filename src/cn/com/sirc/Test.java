@@ -1,12 +1,8 @@
 package cn.com.sirc;
 
 
-import java.io.File;
 import java.util.Timer;
 import java.util.TimerTask;
-
-import java.util.Date;
-import java.text.SimpleDateFormat;
 
 import cn.com.ftphelp.Ftp;
 import cn.com.ftphelp.FtpUtil;
